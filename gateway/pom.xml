@@ -8,16 +8,17 @@
         <version>2.1.5.RELEASE</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <groupId>com.itmuch</groupId>
+    <groupId>com.gateway</groupId>
     <artifactId>gateway</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>gateway</name>
-    <description>小程序网关</description>
+    <description>gateway网关</description>
 
     <properties>
         <java.version>1.8</java.version>
         <spring-cloud.version>Greenwich.SR1</spring-cloud.version>
         <spring-cloud-alibaba-dependencies>0.9.0.RELEASE</spring-cloud-alibaba-dependencies>
+        <info-joyc-framework-all>0.0.1-SNAPSHOT</info-joyc-framework-all>
     </properties>
 
     <dependencies>
@@ -51,7 +52,7 @@
         <dependency>
             <groupId>info.joyc</groupId>
             <artifactId>framework-all</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
+            <version>${info-joyc-framework-all}</version>
         </dependency>
     </dependencies>
 
