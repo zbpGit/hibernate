@@ -27,7 +27,7 @@
         <!--    gateway(网关)    -->
         <module>gateway</module>
         <!--    user(用户服务提供者)    -->
-        <module>user</module>
+        <module>user-center</module>
     </modules>
 
     <properties>
