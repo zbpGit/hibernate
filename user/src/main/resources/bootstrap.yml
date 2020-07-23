@@ -1,0 +1,38 @@
+logging:
+  config: classpath:logback-spring.xml
+  path: F://log//hibernate//user
+  level:
+    com.hibernate.dao: debug
+spring:
+  devtools:
+    restart:
+      enabled: false
+  #nacos配置文件名称
+  application:
+    name: user-service
+  profiles:
+    active: dev
+  cloud:
+    #nacos注册中心地址配置
+    nacos:
+      discovery:
+        server-addr: 49.232.19.159:8848
+          #执行nacos服务管理,服务列表对应的服务控件
+          #namespace: ed8c3991-b836-4839-87b5-f4b4bdc63180
+          #cluster-name: NJ
+          #实例元数据设置（可以设置当前服务的备注）
+        #metadata:
+        #version: 2.0
+      #nacos注册中心所使用的配置文件后缀
+      config:
+        file-extension: yaml
+        server-addr: 49.232.19.159:8848
+#spring-actuator 服务系统监控
+management:
+  endpoint:
+    health:
+      show-details: always
+  endpoints:
+    web:
+      exposure:
+        include: '*'

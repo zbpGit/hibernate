@@ -3,16 +3,19 @@ package com.hibernate.web.system;
 import com.github.pagehelper.PageInfo;
 import com.hibernate.entity.system.CharacterUser;
 import com.hibernate.service.system.CharacterUserService;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
+import info.joyc.core.enums.DataStatusEnum;
 import info.joyc.tool.lang.Assert;
-import org.springframework.web.bind.annotation.*;
+import info.joyc.tool.util.StringUtil;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiImplicitParams;
 import io.swagger.annotations.ApiOperation;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -25,9 +28,9 @@ import java.util.Map;
  * This is not a free software, without any authorization is not allowed to use and spread.
  * ==============================================
  *
- * @desc : 系统-用户角色关联表控制类
  * @author : zhangbeiping
  * @version : v1.0.0
+ * @desc : 系统-用户角色关联表控制类
  * @since : 2020-07-23 17:31
  */
 @RestController
@@ -46,8 +49,8 @@ public class CharacterUserController {
     })
     @GetMapping(value = "")
     public ResponseEntity<PageInfo<CharacterUser>> getCharacterUserList(@RequestParam(required = false) String statusIds,
-                                                                @RequestParam(required = false, defaultValue = "0") Integer pageNum,
-                                                                @RequestParam(required = false, defaultValue = "0") Integer pageSize) {
+                                                                        @RequestParam(required = false, defaultValue = "0") Integer pageNum,
+                                                                        @RequestParam(required = false, defaultValue = "0") Integer pageSize) {
         Map<String, Object> parameterMap = new HashMap<>();
         if (StringUtil.isNotBlank(statusIds)) {
             parameterMap.put("statusIds", Arrays.asList(statusIds.split(",")));
