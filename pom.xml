@@ -26,6 +26,8 @@
         <module>framework/tool</module>
         <!--    gateway(网关)    -->
         <module>gateway</module>
+        <!--    user(用户服务提供者)    -->
+        <module>user</module>
     </modules>
 
     <properties>

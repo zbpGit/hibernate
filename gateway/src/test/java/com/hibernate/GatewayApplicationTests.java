@@ -1,4 +1,4 @@
-package com.gateway;
+package com.hibernate;
 
 import org.junit.Test;
 import org.springframework.boot.test.context.SpringBootTest;
