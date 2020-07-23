@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hibernate.dao.system.CharacterUserDao">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.hibernate.entity.system.CharacterUser">
+        <id column="id" property="id" />
+        <result column="character_id" property="characterId" />
+        <result column="user_id" property="userId" />
+        <result column="status" property="status" />
+        <result column="create_time" property="createTime" />
+        <result column="modify_time" property="modifyTime" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="BaseColumnList">
+        t.id, t.character_id, t.user_id, t.status, t.create_time, t.modify_time
+    </sql>
+
+    <select id="queryForList" resultMap="BaseResultMap" parameterType="map">
+        SELECT
+        <include refid="BaseColumnList"/>
+        FROM sys_character_user t
+        <where>
+            <if test="id != null and id != ''">
+                AND t.id = #{id}
+            </if>
+            <if test="ids != null and ids.size() > 0">
+                AND t.id IN
+                <foreach item="item" index="index" collection="ids" open="(" separator="," close=")">#{item}</foreach>
+            </if>
+            <if test="status != null">
+                AND t.status = #{status}
+            </if>
+            <if test="statusIds != null and statusIds.size > 0">
+                AND t.status IN
+                <foreach item="item" index="index" collection="statusIds" open="(" separator="," close=")">#{item}</foreach>
+            </if>
+        </where>
+    </select>
+</mapper>

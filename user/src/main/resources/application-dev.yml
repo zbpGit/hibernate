@@ -1,0 +1,9 @@
+spring:
+  devtools:
+    restart:
+      enabled: false
+  datasource:
+    drivername: com.mysql.jdbc.Driver
+    url: jdbc:mysql://49.232.19.159:3306/sunnyDay?useSSL=false&useUnicode=true&characterEncoding=utf8&autoReconnect=true&zeroDateTimeBehavior=convertToNull
+    username: root
+    password: ******
