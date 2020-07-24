@@ -1,6 +1,6 @@
 logging:
   config: classpath:logback-spring.xml
-  path: F://log//hibernate//user
+  path: E://log//hibernate//user
   level:
     com.hibernate.dao: debug
 spring:

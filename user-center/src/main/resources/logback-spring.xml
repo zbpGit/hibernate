@@ -10,9 +10,7 @@
     <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
         <encoder>
             <pattern>
-                %clr(%d{yyyy-MM-dd HH:mm:ss.SSS}){faint} %clr(%-5level) %clr(%contextName){faint}
-                %clr(${PID:- }){magenta} %clr([%thread]){faint} %clr(%logger){blue} %clr(-){faint}
-                %m%n${LOG_EXCEPTION_CONVERSION_WORD:-%wEx}
+                %clr(%d{yyyy-MM-dd HH:mm:ss.SSS}){faint} %clr(%-5level) %clr(%contextName){faint}%clr(${PID:- }){magenta} %clr([%thread]){faint} %clr(%logger){blue} %clr(-){faint}%m%n${LOG_EXCEPTION_CONVERSION_WORD:-%wEx}
             </pattern>
         </encoder>
     </appender>
